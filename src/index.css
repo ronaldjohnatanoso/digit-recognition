@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-#root{
+#root {
+  min-height: 100vh;
   background: linear-gradient(to bottom, #e7b838, #c8ee61);
   overflow-x: hidden;
 }
+
 
 canvas{
   border: solid 1px black;
@@ -27,50 +32,25 @@ canvas{
 
 button{
   cursor: pointer;
-}
-
-.save{
   height: 100px;
   width: 200px;
-}
-
-.predict{
-  height: 100px;
-  width: 200px;
-}
-
-.clear{
-  height: 100px;
-  width: 200px;
+  font-weight: 400;
 }
 
 .save-container{
+  margin:  0 20px 0 20px;
   display: flex;
   justify-content: center;
   /* background-color: rgb(74, 74, 189); */
   margin-top: 200px;
 }
 
-.output-container{
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  /* background-color: yellow */
-}
-
-.prediction{
-  height: 100px;
-  width: 90vw;
-  background: linear-gradient(to right, rgb(189, 160, 160), rgb(129, 136, 233));
-  border: solid 1px black;
-  text-align: center;
-  padding-top: 30px;
-}
-
 .title{
   font-size: 50px;
   padding-top: 20px;
   margin: -10px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
 }
 
@@ -80,8 +60,23 @@ button{
   text-align: center;
 }
 
-.hey{
-  width: 500px;
-  height: 500px;
-
+.output-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  
 }
+
+.prediction{
+  width: 90vw;
+  background: linear-gradient(to right, rgb(189, 160, 160), rgb(129, 136, 233));
+  border: solid 1px black;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer{
+  text-align: center;
+}
+
