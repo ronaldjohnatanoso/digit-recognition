@@ -4,6 +4,9 @@ import Footer from "./Footer";
 
 const URL: string = import.meta.env.VITE_API_ENDPOINT;
 
+//scale factor of the canvas
+const canvasScale: number = 12;
+
 const App: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [prediction, setPrediction] = useState<string>("");
@@ -34,7 +37,7 @@ const App: React.FC = () => {
         ctx.strokeStyle = "black";
         ctx.lineJoin = "round";
         ctx.lineCap = "round";
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 30;
 
         const [currentX, currentY] = getCoordinates(e) as [number, number];
 
@@ -60,8 +63,8 @@ const App: React.FC = () => {
           clientY = e.touches[0]?.clientY;
         }
         const { left, top }: DOMRect = canvas.getBoundingClientRect();
-        const scaleX: number = canvas.width / (canvas.offsetWidth * 12);
-        const scaleY: number = canvas.height / (canvas.offsetHeight * 12);
+        const scaleX: number = canvas.width / (canvas.offsetWidth );
+        const scaleY: number = canvas.height / (canvas.offsetHeight );
         return [
           clientX ? (clientX - left) * scaleX : 0,
           clientY ? (clientY - top) * scaleY : 0,
@@ -160,7 +163,7 @@ const App: React.FC = () => {
         Draw one digit only on the canvas and then click <strong>Guess</strong> and wait.
       </div>
       <div className="canvas-container">
-        <canvas ref={canvasRef} width={28} height={28} />
+        <canvas ref={canvasRef} width={28*canvasScale} height={28*canvasScale} />
       </div>
       <div className="save-container">
         <button className="save" onClick={handleSaveImage}>
