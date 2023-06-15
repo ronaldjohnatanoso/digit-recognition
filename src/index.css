@@ -37,6 +37,10 @@ button{
   font-weight: 400;
 }
 
+.predict{
+  font-size: large  ;
+}
+
 .save-container{
   margin:  0 20px 0 20px;
   display: flex;

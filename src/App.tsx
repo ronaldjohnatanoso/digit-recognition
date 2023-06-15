@@ -157,7 +157,7 @@ const App: React.FC = () => {
         Let's test how good you are at writing numbers!!
       </div>
       <div className="instruction">
-        Draw one digit only on the canvas and then click Predict and wait.
+        Draw one digit only on the canvas and then click <strong>Guess</strong> and wait.
       </div>
       <div className="canvas-container">
         <canvas ref={canvasRef} width={28} height={28} />
@@ -167,7 +167,7 @@ const App: React.FC = () => {
           Save Image
         </button>
         <button className="predict" onClick={handlePrediction}>
-          Predict
+          Guess
         </button>
         <button className="clear" onClick={handleClear}>
           Clear
